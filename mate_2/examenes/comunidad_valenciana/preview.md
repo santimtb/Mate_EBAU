@@ -1,1 +1,1 @@
-$$\boxed{\textbf{P(P) = 0.35}}$$
+La probabilidad de que dos clientes pidan distintos tipos de pizza es la suma de las probabilidades de los sucesos que cumplen esta condición: $$P(MV) + P(MP) + P(VP) + P(VM) + P(PM) + P(PV)$$ o si usamos los complementarios: $$ 1 - [P(MM) + P(VV) + P(PP)] = 1 - [0.4^2 + 0.25^2 + 0.35^2] = 1 - [0.16 + 0.0625 + 0.1225] = 1 - 0.345 = 0.655$$
