@@ -1,0 +1,244 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Examen de Matemáticas",
+  "type": "object",
+  "required": [
+    "comunidad",
+    "convocatoria",
+    "año",
+    "fuente",
+    "examen"
+  ],
+  "properties": {
+    "comunidad": {
+      "type": "string"
+    },
+    "convocatoria": {
+      "type": "string"
+    },
+    "año": {
+      "type": "integer"
+    },
+    "fuente": {
+      "type": ["string","null"],
+      "format": "uri",
+      "minLength": 0
+    },
+    "examen": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "bloque",
+          "preguntas"
+        ],
+        "properties": {
+          "bloque": {
+            "type": "string",
+            "enum": [
+              "Álgebra",
+              "Geometría Analítica",
+              "Análisis",
+              "Estadística y Probabilidad"
+            ]
+          },
+          "preguntas": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "numero",
+                "puntuacion"
+              ],
+              "properties": {
+                "numero": {
+                  "type": "integer"
+                },
+                "contenido": {
+                  "type": "string"
+                },
+                "imagen": {
+                  "type": "string",
+                  "pattern": "^$|^https?://.+"
+                },
+                "temas": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "dificultad": {
+                  "type": "string",
+                  "enum": [
+                    "baja",
+                    "media-baja",
+                    "media",
+                    "media-alta",
+                    "alta"
+                  ]
+                },
+                "puntuacion": {
+                  "type": "number"
+                },
+                "solucion": {
+                  "type": "array",
+                  "minItems": 0,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "metodo",
+                      "pasos",
+                      "resultado"
+                    ],
+                    "properties": {
+                      "metodo": {
+                        "type": "string"
+                      },
+                      "imagen": {
+                        "type": "string",
+                        "pattern": "^$|^https?://.+"
+                      },
+                      "pasos": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "contenido": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "resultado": {
+                        "type": "object",
+                        "properties": {
+                          "contenido": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "apartados": {
+                  "type": "array",
+                  "minItems": 0,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "letra",
+                      "contenido",
+                      "temas",
+                      "dificultad",
+                      "solucion",
+                      "puntuacion"
+                    ],
+                    "properties": {
+                      "letra": {
+                        "type": "string"
+                      },
+                      "contenido": {
+                        "type": "string"
+                      },
+                      "imagen": {
+                        "type": "string",
+                        "pattern": "^$|^https?://.+"
+                      },
+                      "temas": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "dificultad": {
+                        "type": "string",
+                        "enum": [
+                          "baja",
+                          "media-baja",
+                          "media",
+                          "media-alta",
+                          "alta"
+                        ]
+                      },
+                      "puntuacion": {
+                        "type": "number"
+                      },
+                      "solucion": {
+                        "type": "array",
+                        "minItems": 0,
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "metodo",
+                            "pasos",
+                            "resultado"
+                          ],
+                          "properties": {
+                            "metodo": {
+                              "type": "string"
+                            },
+                            "imagen": {
+                              "type": "string",
+                              "pattern": "^$|^https?://.+"
+                            },
+                            "pasos": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "contenido": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "resultado": {
+                              "type": "object",
+                              "properties": {
+                                "contenido": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "apartados": {
+                        "type": "array",
+                        "minItems": 1
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "solucion": {
+                        "type": "array",
+                        "maxItems": 0
+                      }
+                    }
+                  },
+                  "else": {
+                    "properties": {
+                      "solucion": {
+                        "type": "array",
+                        "minItems": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

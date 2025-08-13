@@ -1,0 +1,81 @@
+{
+  "$schema": "../../schemas/examen.schema.json",
+  "comunidad": "Comunidad Valenciana",
+  "convocatoria": "Junio",
+  "año": 2025,
+  "fuente": "https://www.ebaumatematicas.com/wp-content/uploads/2025/06/2oBachCC_EBAU_Valencia_2025-Ordinaria.pdf",
+  "examen": [
+    {
+      "bloque": "Estadística y Probabilidad",
+      "preguntas": [
+        {
+          "numero": 1,
+          "contenido": "Una pizzería ofrece tres tipos de pizza: margarita, vegetariana y pepperoni. A lo largo de los años, utilizando su aplicación para teléfonos inteligentes, el restaurante ha recopilado datos sobre las preferencias de los clientes, calculando que el 40% de sus clientes piden pizza margarita, el 25% elige la pizza vegetariana y el resto prefiere la pizza pepperoni.",
+          "puntuacion": 2.5,
+          "temas": ["Probabilidad", "Distribución Binomial"],
+          "dificultad": "media-baja",
+          "solucion": [],
+          "apartados": [
+            {
+              "letra": "1.1",
+              "contenido": "Si se elige un cliente al azar, ¿cuál es la probabilidad de que haya pedido una pizza pepperoni?",
+              "imagen": "",
+              "temas": ["Probabilidad"],
+              "dificultad": "baja",
+              "puntuacion": 0.25,
+              "solucion": [
+                {
+                  "metodo": "Sucesos elementales",
+                  "imagen": "",
+                  "pasos": [
+                    {
+                      "contenido": "Identificamos los sucesos: \n M: El cliente pide pizza margarita\n V: El cliente pide pizza vegetariana\n P: El cliente pide pizza pepperoni"
+                    },
+                    {
+                      "contenido": "Obtenemos las probabilidades elementales de los sucesos del enunciado: \n P(M) = 0.4, P(V) = 0.25"
+                    },
+                    {
+                      "contenido": "Calculanos la probabilidad de que un cliente pida pizza pepperoni: \n P(P) = 1 - P(M) - P(V) = 1 - 0.4 - 0.25 = **0.35**"
+                    }
+                  ],
+                  "resultado": {
+                    "contenido": "**P(P) = 0.35**"
+                  }
+                }
+              ]
+            },
+            {
+              "letra": "1.2",
+              "contenido": "¿Cuál es la probabilidad de que dos clientes elegidos al azar hayan pedido distintos tipos de pizza?",
+              "puntuacion": 0.75,
+              "temas": [
+                "Experimentos aleatorios",
+                "Probabilidad",
+                "Experimentos compuestos"
+              ],
+              "dificultad": "baja",
+              "imagen": "",
+              "solucion": [
+                {
+                  "metodo": "Diagrama en árbol",
+                  "imagen": "",
+                  "pasos": [
+                    {
+                      "contenido": "Planteamos el diagrama en árbol con los sucesos del enunciado"
+                    },
+                    {
+                      "contenido": "La probabilidad de que dos clientes pidan distintos tipos de pizza es la suma de las probabilidades de los sucesos que cumplen esta condición: \n P(MV) + P(MP) + P(VP) + P(VM) + P(PM) + P(PV)\n o si usamos los complementarios: \n 1 - [P(MM) + P(VV) + P(PP)] = 1 - [0.4^2 + 0.25^2 + 0.35^2] = 1 - [0.16 + 0.0625 + 0.1225] = 1 - 0.345 = **0.655**"
+                    }
+                  ],
+                  "resultado": {
+                    "contenido": "La probabilidad de que dos clientes pidan distintos tipos de pizza es **0.655**"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
