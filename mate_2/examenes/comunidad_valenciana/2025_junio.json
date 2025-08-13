@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/examen.schema.json",
+  "$schema": "../../../schemas/mate.schema.json",
   "comunidad": "Comunidad Valenciana",
   "convocatoria": "Junio",
   "año": 2025,
@@ -29,17 +29,17 @@
                   "imagen": "",
                   "pasos": [
                     {
-                      "contenido": "Identificamos los sucesos: \n M: El cliente pide pizza margarita\n V: El cliente pide pizza vegetariana\n P: El cliente pide pizza pepperoni"
+                      "contenido": "Identificamos los sucesos:<br>M: El cliente pide pizza margarita<br>V: El cliente pide pizza vegetariana<br>P: El cliente pide pizza pepperoni"
                     },
                     {
-                      "contenido": "Obtenemos las probabilidades elementales de los sucesos del enunciado: \n P(M) = 0.4, P(V) = 0.25"
+                      "contenido": "Obtenemos las probabilidades elementales de los sucesos del enunciado: $P(M) = 0.4, P(V) = 0.25$"
                     },
                     {
-                      "contenido": "Calculanos la probabilidad de que un cliente pida pizza pepperoni: \n P(P) = 1 - P(M) - P(V) = 1 - 0.4 - 0.25 = **0.35**"
+                      "contenido": "Calculanos la probabilidad de que un cliente pida pizza pepperoni: $$ P(P) = 1 - P(M) - P(V) = 1 - 0.4 - 0.25 = \boxed{\textbf{0.35}}$$ "
                     }
                   ],
                   "resultado": {
-                    "contenido": "**P(P) = 0.35**"
+                    "contenido": "$$\boxed{\textbf{P(P) = 0.35}}$$"
                   }
                 }
               ]
@@ -54,7 +54,7 @@
                 "Experimentos compuestos"
               ],
               "dificultad": "baja",
-              "imagen": "",
+              "imagen": "../images/2025_junio_1_2.png",
               "solucion": [
                 {
                   "metodo": "Diagrama en árbol",
