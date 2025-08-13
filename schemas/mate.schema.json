@@ -105,6 +105,10 @@
                           "properties": {
                             "contenido": {
                               "type": "string"
+                            },
+                            "imagen": {
+                              "type": "string",
+                              "pattern": "^$|^https?://.+"
                             }
                           }
                         }
@@ -188,6 +192,10 @@
                                 "properties": {
                                   "contenido": {
                                     "type": "string"
+                                  },
+                                  "imagen": {
+                                    "type": "string",
+                                    "pattern": "^$|^https?://.+"
                                   }
                                 }
                               }
